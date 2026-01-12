@@ -2,7 +2,7 @@ body {
   margin: 0;
   font-family: "Figtree", sans-serif;
   background: #f8f4e3;
-background: radial-gradient(circle, rgb(251, 248, 236) 0%, rgb(242, 230, 198) 30%, rgba(247, 243, 218, 1) 50%, rgb(214, 212, 184) 78%);
+background: radial-gradient(circle, rgb(251, 248, 236) 0%, rgb(246, 237, 212) 30%, rgba(247, 243, 218, 1) 50%, rgb(242, 241, 218) 78%);
 }
 
 header {
