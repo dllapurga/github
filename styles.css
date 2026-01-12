@@ -1,0 +1,217 @@
+body {
+  margin: 0;
+  font-family: "Figtree", sans-serif;
+  background: #ECE9DE;
+}
+
+header {
+  background-color: #2f4c2a;
+  padding: 40px 60px;
+  border-radius: 0 0 40px 40px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  position: relative;
+  box-shadow: 0 6px 0 rgba(0,0,0,0.3);
+}
+
+header h1 {
+  margin: 0;
+  font-family: "Outfit", sans-serif;
+  font-weight: 700;
+  color: #D4FF00;
+  line-height: 0.4;
+  font-size: 45px;
+}
+
+.fa-sun {
+    animation: spin 15s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+header h1:first-of-type {
+  grid-column: 1;
+}
+
+header h1:last-of-type {
+  grid-column: 1;
+}
+
+header p {
+  margin: 0 0 0 0;
+  font-family: "Outfit", sans-serif;
+  font-size: 0.9rem;
+  background-color: #CF5A2C;
+  color: #2B2B2B;
+  padding: 6px 16px;
+  border-radius: 50px;
+  text-align: center;
+  justify-self: end;
+  font-weight: 500;
+}
+
+header p:first-of-type {
+  grid-column: 3;
+}
+
+header p:last-of-type {
+  grid-column: 3;
+}
+
+#bottom-tag {
+    margin-bottom: 20px;
+}
+
+.projects {
+    justify-content: center;
+    text-align: center;
+    font-family:'Outfit', sans-serif;
+    color: #CF5A2C;
+    font-weight: 500;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+h2 {
+    font-family: 'figtree';
+    padding-left: 10px;
+    /* color:  */
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  margin: auto;
+  max-width: 1200px;
+  position: relative;
+  perspective: 1000px;
+
+  height: 300px;
+  aspect-ratio: 2 / 3;
+  position: relative;
+  perspective: 1000px; 
+}
+
+/* article { */
+  /* padding-bottom: 1rem;
+  margin-left:40px;
+  margin-right:40px; */
+  /* margin-top: 10px;
+  display:flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    margin: auto;
+    max-width: 1200px;
+} */
+
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 40px;
+    gap: 20px;
+}
+
+.container:hover .front{
+  transform: rotateY(180deg);
+}
+
+.container:hover .back {
+  transform: rotateY(360deg);
+}
+
+.back, .front {
+backface-visibility: hidden;
+border-radius: 10px;
+transition: 1s;
+position: absolute;
+width: 100%;
+height: 300px;
+}
+
+.front{
+    display: flex;
+    transform: rotateY(0deg);
+    background-size: cover;
+    background-position: center;
+    background-color: rgb(255, 255, 255);
+  border-radius: 20px;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4);
+}
+
+.back {
+    display: flex;
+    transform: rotateY(180deg);
+    background-color: rgb(17, 86, 13);
+  border-radius: 20px;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4);
+  align-items: center;
+  justify-content: center;
+  
+}
+
+/* .card-one,
+.card-two,
+.card-three,
+.card-four {
+  position: relative;
+  perspective: 1000px;
+} */
+
+.card-one .front {
+  background-image: url("images/card-one.jpg");
+}
+
+.card-two .front {
+  background-image: url("images/madlibs.jpg");
+}
+
+.card-three .front {
+  background-image: url("images/every-picture.jpg");
+}
+
+.card-four .front {
+  background-image: url("images/game-on.jpg");
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+ align-items: center;
+justify-content: center;
+gap: 20px;
+}
+
+.links a {
+    color: whitesmoke;
+}
+
+.links a:hover {
+    color: rgb(178, 24, 24);
+}
+
+
+footer{
+justify-content: center;
+text-align: center;
+line-height: 8px;
+font-family: 'Figtree', sans-serif;
+margin: 0;
+padding-top: 60px;
+}
+
+
+
