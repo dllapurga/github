@@ -21,15 +21,20 @@
     <h2>Go to option + command + j to access the chrome console!</h2>
 
     <script>
+
+// sequence
         var aNum = prompt('Hi! Welcome to Taco Bell! How many items would you like to order?', '');
         console.log(typeof(aNum));
           
         aNum = parseInt(aNum);
         var type = typeof(aNum);
 
+// selection
 
         if(type === 'number') {
             // console.log('Yes a number')
+
+// loop
 
             for (var i = 0; i < aNum; i++) {
                 if(i % 2 === 0) {

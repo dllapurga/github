@@ -2,7 +2,8 @@ body {
   margin: 0;
   font-family: "Figtree", sans-serif;
   background: #f8f4e3;
-background: radial-gradient(circle, rgb(251, 248, 236) 0%, rgb(246, 237, 212) 30%, rgba(247, 243, 218, 1) 50%, rgb(242, 241, 218) 78%);
+  background: radial-gradient(circle, rgb(251, 248, 236) 0%, rgb(246, 237, 212) 30%, rgba(247, 243, 218, 1) 50%, rgb(242, 241, 218) 78%);
+  height: 750pxs;
 }
 
 header {
@@ -51,11 +52,36 @@ header h1:last-of-type {
   position: absolute;
   width: 180px;
   height: 180px;
-  background-color: #d25a2b;
+  /* background-color: #d25a2b; */
   border-radius: 50%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+
+  animation: colorShift 15s infinite linear;
+}
+
+@keyframes colorShift {
+  0%{
+    background-color: #c05024;
+  }
+
+  25%{
+    background-color: #dd761d;
+  }
+
+  50%{
+    background-color: #ed7d15;
+  }
+
+  75%{
+    background-color: #dd761d;
+  }
+
+  100%{
+    background-color: #c05024;
+  }
+
 }
 
 header p {
@@ -103,7 +129,7 @@ h2 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 15px;
+  /* padding: 15px; */
   margin: auto;
   max-width: 1200px;
   position: relative;
@@ -120,7 +146,7 @@ h2 {
     max-width: 1000px;
     margin: 40px auto;
     padding: 0 40px;
-    gap: 20px;
+    gap: 10px;
 }
 
 .container:hover .front{
