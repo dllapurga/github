@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Experimentation - Selections & Loop</title>
+
+    <!-- Normalize Script -->
+     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+     
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    
+    <!-- My Styles -->
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <h1>Experimentation 1</h1>
+    <h2>Go to option + command + j to access the chrome console!</h2>
+
+    <script>
+        var aNum = prompt('Hi! Welcome to Taco Bell! How many items would you like to order?', '');
+        console.log(typeof(aNum));
+          
+        aNum = parseInt(aNum);
+        var type = typeof(aNum);
+
+
+        if(type === 'number') {
+            // console.log('Yes a number')
+
+            for (var i = 0; i < aNum; i++) {
+                if(i % 2 === 0) {
+                    console.log('Crunchwrap');
+                } else {
+                    console.log('Baja Blast')
+                }
+
+            }
+        }
+
+        
+
+
+    </script>
+</body>
+</html>
