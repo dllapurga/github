@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiment 2</title>
+
+     <!-- Normalize Script -->
+     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+     
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    
+    <style>
+
+        body {
+        font-family: 'Outfit', sans-serif;
+        text-align: center;
+        padding: 3rem;
+        transition: background-color 0.5s ease;
+        }
+
+        h1 {
+            margin-bottom: 3rem;
+        }
+
+        form {
+        margin-bottom: 2rem;
+        }
+
+        select {
+        padding: 0.6rem;
+        font-size: 1rem;
+        margin-top: 1rem;
+        border-radius: 50px;
+        width:300px;
+        justify-content: center;
+        text-align: center;
+        margin-bottom: 2rem;
+        }
+
+        button {
+        padding: 0.6rem;
+        font-size: 1rem;
+        margin-top: 1rem;
+        border-radius: 50px;
+        width:150px;
+        justify-content: center;
+        text-align: center;
+        }
+
+        h2 {
+        font-weight: normal;
+        margin-top: 2rem;
+        }
+
+        #moodForm {
+            display: flex;
+            flex-direction: column;
+            align-items:  center;
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Mood Music Recommender</h1>
+    </header>
+
+
+    <!-- Form HTML -->
+    <form id="moodForm">
+        <label for="mood">Hello! So what's today's mood?</label>
+
+          <select id="mood">
+            <option value="" >--Select your mood--</option>
+            <option value="happy">Happy</option>
+            <option value="energetic">Energetic</option>
+            <option value="chill">Chill</option>
+            <option value="heartbroken">Heartbroken</option>
+        </select>
+    
+        <button type="submit">Get Song</button>
+    </form>
+
+    
+
+    <!-- Output -->
+    <h2 id="output"></h2>
+
+    <script>
+
+        // Gets mood from what the user selected
+        function receiveMoodFromFormSelection() {
+            var moodSelect = document.getElementById('mood');
+            return moodSelect.value; 
+        }
+
+
+        // Gets a song for their selected mood
+        function getSongForMood(mood) {
+            var songs = [];
+
+
+        if (mood === "happy") {
+            songs = ['Valerie by Amy Winehouse'];
+        } else if (mood === "energetic") {
+            songs = ['The Other Side by Jason Derulo'];
+        } else if (mood === "chill") {
+            songs = ['Can I Call You Rose by Three Sacred Souls'];
+        } else if (mood === "heartbroken") {
+            songs = ['Leave (Get Out) by JoJo'];
+        }
+
+        var randomIndex = 0;
+            for (var i = 0; i < 1; i++) {
+            randomIndex = Math.floor(Math.random() * songs.length);
+        }
+
+        return songs[randomIndex]; 
+        }
+
+        function changeBackgroundImage(mood) {
+        if (mood === "happy") {
+            document.body.style.backgroundImage = "url('images/happy_gradient')";
+        } else if (mood === "energetic") {
+            document.body.style.backgroundImage = "url('images/energetic_gradient.jpg')";
+        } else if (mood === "chill") {
+            document.body.style.backgroundImage = "url('images/chill_gradient.jpg')";
+        } else if (mood === "heartbroken") {
+            document.body.style.backgroundImage = "url('images/heartbroken_gradient.jpg')";
+        }
+        }
+        changeBackgroundImage(mood);
+        
+        document.body.style.backgroundSize = "cover";
+        document.body.style.backgroundPosition = "center";
+        document.body.style.backgroundRepeat = "no-repeat";
+
+
+
+
+
+       
+ 
+  
+
+
+        
+
+    </script>
+</body>
+</html>
