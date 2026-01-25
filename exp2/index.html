@@ -23,6 +23,8 @@
         text-align: center;
         padding: 3rem;
         transition: background-color 0.5s ease;
+        min-height: 100vh;
+        color:rgb(0, 0, 0);
         }
 
         h1 {
@@ -91,14 +93,14 @@
 
     
 
-    <!-- Output -->
-    <h2 id="output"></h2>
+        <!-- Output -->
+        <h2 id="output"></h2>
 
     <script>
 
         // Gets mood from what the user selected
         function receiveMoodFromFormSelection() {
-            var moodSelect = document.getElementById('mood');
+            var moodSelect = document.querySelect('mood');
             return moodSelect.value; 
         }
 
@@ -124,11 +126,11 @@
         }
 
         return songs[randomIndex]; 
-        }
+    }
 
         function changeBackgroundImage(mood) {
         if (mood === "happy") {
-            document.body.style.backgroundImage = "url('images/happy_gradient')";
+            document.body.style.backgroundImage = "url('images/happy_gradient.jpg')";
         } else if (mood === "energetic") {
             document.body.style.backgroundImage = "url('images/energetic_gradient.jpg')";
         } else if (mood === "chill") {
@@ -136,7 +138,7 @@
         } else if (mood === "heartbroken") {
             document.body.style.backgroundImage = "url('images/heartbroken_gradient.jpg')";
         }
-        }
+    }
         changeBackgroundImage(mood);
         
         document.body.style.backgroundSize = "cover";
@@ -147,8 +149,32 @@
 
 
 
-       
- 
+        
+        function handleFormSubmit(event) {
+        event.preventDefault();
+
+      
+        var mood = receiveMoodFromFormSelection();
+
+        if (mood === "") {
+        document.querySelector("#output").innerHTML =
+            "Please select a mood first :(";
+        return;
+        }
+
+        var song = getSongForMood(mood); 
+        changeBackgroundImage(mood);
+
+
+        document.querySelector("#output").innerHTML =
+        "You're feeling <strong>" + mood + "</strong>.<br><br>" +
+        "Try listening to:<br><strong>" + song + "</strong> 🎶";
+    }
+
+        document.querySelector("#moodForm")
+        document.addEventListener("submit", handleFormSubmit);
+        
+    
   
 
 
