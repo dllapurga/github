@@ -74,23 +74,7 @@
     <header>
         <h1>Mood Music Recommender</h1>
     </header>
-
-
-    <!-- Form HTML -->
-    <form id="moodForm">
-        <label for="mood">Hello! So what's today's mood?</label>
-
-          <select id="mood">
-            <option value="" >--Select your mood--</option>
-            <option value="happy">Happy</option>
-            <option value="energetic">Energetic</option>
-            <option value="chill">Chill</option>
-            <option value="heartbroken">Heartbroken</option>
-        </select>
-    
-        <button type="submit">Get Song</button>
-    </form>
-
+  
     
 
         <!-- Output -->
@@ -99,36 +83,31 @@
     <script>
 
         // Gets mood from what the user selected
-        function receiveMoodFromFormSelection() {
-            var moodSelect = document.querySelect('mood');
-            return moodSelect.value; 
-        }
+       var mood = prompt('How are we feeling today? (Choose one of the moods: happy, chill, energetic, heartbroken)');
+
 
 
         // Gets a song for their selected mood
         function getSongForMood(mood) {
-            var songs = [];
-
-
+           
         if (mood === "happy") {
-            songs = ['Valerie by Amy Winehouse'];
+            return 'Valerie by Amy Winehouse';
         } else if (mood === "energetic") {
-            songs = ['The Other Side by Jason Derulo'];
+            return'The Other Side by Jason Derulo';
         } else if (mood === "chill") {
-            songs = ['Can I Call You Rose by Three Sacred Souls'];
+            return'Can I Call You Rose by Three Sacred Souls';
         } else if (mood === "heartbroken") {
-            songs = ['Leave (Get Out) by JoJo'];
+            return'Leave (Get Out) by JoJo';
         }
 
-        var randomIndex = 0;
-            for (var i = 0; i < 1; i++) {
-            randomIndex = Math.floor(Math.random() * songs.length);
-        }
 
-        return songs[randomIndex]; 
     }
 
+
+    // Choose background image
         function changeBackgroundImage(mood) {
+        var body = document.querySelector('body');
+        
         if (mood === "happy") {
             document.body.style.backgroundImage = "url('images/happy_gradient.jpg')";
         } else if (mood === "energetic") {
@@ -139,45 +118,24 @@
             document.body.style.backgroundImage = "url('images/heartbroken_gradient.jpg')";
         }
     }
-        changeBackgroundImage(mood);
+
+
+        // Outputting information to screen
+        var song = getSongForMood(mood);
         
-        document.body.style.backgroundSize = "cover";
-        document.body.style.backgroundPosition = "center";
-        document.body.style.backgroundRepeat = "no-repeat";
-
-
-
-
-
-        
-        function handleFormSubmit(event) {
-        event.preventDefault();
-
-      
-        var mood = receiveMoodFromFormSelection();
-
-        if (mood === "") {
+        if (mood === null) {
         document.querySelector("#output").innerHTML =
             "Please select a mood first :(";
-        return;
-        }
-
-        var song = getSongForMood(mood); 
+        } else {
         changeBackgroundImage(mood);
 
 
         document.querySelector("#output").innerHTML =
-        "You're feeling <strong>" + mood + "</strong>.<br><br>" +
+        "You're feeling <strong>" + mood + "</strong><br><br>" +
         "Try listening to:<br><strong>" + song + "</strong> 🎶";
-    }
+        }
 
-        document.querySelector("#moodForm")
-        document.addEventListener("submit", handleFormSubmit);
-        
-    
-  
-
-
+       
         
 
     </script>
