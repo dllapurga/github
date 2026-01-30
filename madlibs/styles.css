@@ -48,18 +48,15 @@ min-height: 100vh;
   margin: 3rem auto;
   position: relative;
 
-  /* 3D setup */
   perspective: 1000px;
   transform-style: preserve-3d;
   transition: transform 1s;
 }
 
-/* flip when clicked */
 #card:focus-within {
   transform: rotateY(180deg);
 }
 
-/* both sides */
 .front,
 .back {
   position: absolute;
@@ -71,12 +68,10 @@ min-height: 100vh;
   background-image:url("images/paper.jpg");
 }
 
-/* front side */
 .front {
   background: white;
 }
 
-/* back side */
 .back {
   transform: rotateY(180deg);
   background-color: #F2EBE1;
@@ -125,11 +120,16 @@ h1 {
 #send-form {
   display: block;
   flex: space-around;
-  /* justify-self: end; */
+  background-color:rgb(130, 173, 196);
+  color:rgb(255, 255, 255);
+  font-weight:500;
 }
 
-.back button {
-  grid-column: 2;
-  justify-self: end;
-  margin-left: 2rem; /* increase this */
+.back input[type="submit"] {
+  grid-column: 1 / -1;   
+  justify-self: end;    
+}
+
+#send-form:hover {
+    background-color: #b2e123;
 }
