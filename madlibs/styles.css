@@ -132,5 +132,21 @@ h1 {
     background-color: #b2e123;
 }
 
+/* Card 2 */
+
+#card2 {
+  width: 800px;
+  height: 477px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(150%, -50%); /* start off-screen */
+  transition: transform 1s ease;
+  border-radius: 20px;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4);
+  background-image: url("images/paper.jpg");
+}
+
+
 
 
