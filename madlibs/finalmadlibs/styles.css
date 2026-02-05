@@ -171,7 +171,7 @@ h1 {
   font-size: 1.5rem;
   margin-top: 0;
   line-height: 36px;
-  font-weight: 40;
+  font-weight: 400;
 }
 
 #current-card:focus-within:not(.slide-out) {
