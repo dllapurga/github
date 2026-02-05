@@ -48,6 +48,7 @@ max-height: 100vh;
   justify-content: center;
   align-items: center;
   text-align: center;
+  transition: transform 0.8s ease-in;
 }
 
 #current-card:focus-within {
@@ -117,7 +118,7 @@ h1 {
 
 #send-form {
   display: block;
-  flex: space-around;
+  justify-content: space-around;
   background-color:rgb(130, 173, 196);
   color:rgb(255, 255, 255);
   font-weight:500;
@@ -133,15 +134,14 @@ h1 {
 }
 
 /* Card 2 */
-
-#card2 {
+#next-card {
   width: 800px;
   height: 477px;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(150%, -50%); /* start off-screen */
-  transition: transform 1s ease;
+  transform: translate(-150%, -50%); /* start off-screen */
+  transition: transform 0.8s ease;
   border-radius: 20px;
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4);
   background-image: url("images/paper.jpg");
@@ -150,3 +150,19 @@ h1 {
 
 
 
+
+
+/* CSS Card Slide Off After Submit */
+
+
+/* slide off screen */
+#current-card.slide-out {
+  transform: translate(150%, -50%);
+}
+
+
+
+/* new card slide on screen */
+#next-card.slide-in {
+  transform: translate(-50%, -50%);
+}

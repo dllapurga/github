@@ -1,0 +1,183 @@
+#sketches {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 3rem auto;
+  height:100%;
+}
+
+.top .bottom {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.side {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+}
+
+
+/* MadLibs */
+
+
+#official{
+background-image:url("images/wood_background.jpg");
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+min-height: 700px;
+}
+
+#postcard{
+  border-radius: 5px;
+}
+
+#current-card {
+  width: 800px;
+  height: 477px;
+  margin: 3rem auto;
+  position: relative;
+  perspective: 1000px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.8s ease-in;
+  transform-style: preserve-3d;
+}
+
+#current-card:focus-within {
+  transform: rotateY(180deg);
+}
+
+.front,
+.back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 20px;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4);
+  background-image:url("images/paper.jpg");
+}
+
+.front {
+  background: white;
+}
+
+.back {
+  transform: rotateY(180deg);
+  background-color: #F2EBE1;
+}
+
+#instructions {
+  justify-content: center;
+  text-align: center;
+}
+
+.back form {
+  display: grid;
+  grid-template-columns: 140px 220px;
+  row-gap: 0.75rem;
+  column-gap: 0.75rem;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 50px;
+  font-family: 'Figtree', sans-serif;
+}
+
+.back input {
+  border-radius: 5px;
+}
+
+p {
+  font-size: 3rem;
+  font-family: 'Outfit', sans-serif;
+  color:rgb(255, 255, 255);
+  letter-spacing: -0.05em;
+  font-weight: 500;
+  margin-bottom: 0;
+}
+
+h1 {
+  font-family: 'Outfit', sans-serif;
+  color:#D4FF00;
+  letter-spacing: -0.1em;
+  font-weight: 800;
+  font-size: 80px;
+  margin-left: 40px;
+  margin-top: 30px;
+}
+
+#send-form {
+  display: block;
+  justify-content: space-around;
+  background-color:rgb(130, 173, 196);
+  color:rgb(255, 255, 255);
+  font-weight:500;
+}
+
+.back input[type="submit"] {
+  grid-column: 1 / -1;   
+  justify-self: end;    
+}
+
+#send-form:hover {
+    background-color: #b2e123;
+}
+
+/* Card 2 */
+ #next-card {
+  width: 800px;
+  height: 477px;
+  position: absolute;
+  top: 200px;
+  left: 50%;
+  margin-left: -400px;
+  transform: translateX(-1200px); 
+  transition: transform 0.8s ease;
+  border-radius: 20px;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4);
+  background-image: url("images/paper.jpg");
+
+} 
+
+
+
+
+
+/* slide off screen */
+#current-card.slide-out {
+  transform: translateX(1200px);
+}
+
+#next-card.slide-in {
+  transform: translateX(0);
+  transition: transform 0.5s ease 2s;
+}
+ 
+
+#story-output {
+  padding: 3rem;
+  font-family: 'Figtree', sans-serif;
+  font-size: 1rem;
+  text-align: left;
+}
+
+#story-output p {
+  color: black;
+  font-size: 1.5rem;
+  margin-top: 0;
+  line-height: 36px;
+  font-weight: 40px;
+}
+
+#current-card:focus-within:not(.slide-out) {
+  transform: rotateY(180deg);
+}
+
+
