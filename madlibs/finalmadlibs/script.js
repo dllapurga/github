@@ -1,4 +1,3 @@
-/* JS Card Slide Off After Submit */
 
 (function () {
 
