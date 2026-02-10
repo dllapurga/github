@@ -5,6 +5,12 @@
   console.log('reading js');
 
   const form = document.querySelector('form');
+  const card = document.querySelector('#current-card');
+  const instructions = document.querySelector('#instructions');
+
+  card.addEventListener('click', function () {
+    instructions.style.opacity = '0';
+  });
 
   form.addEventListener('submit', function (event) {
     event.preventDefault();
@@ -20,7 +26,7 @@
     const firstname2 = document.querySelector('#firstname2').value;
     const lastname = document.querySelector('#lastname').value;
     
-
+    
 
     const story = `<p>Dear <span style = 'color:#4B94B6'>${firstname}</span>,</p>
       <p>
@@ -49,7 +55,6 @@
 
     document.querySelector('#current-card').classList.add('slide-out'); 
     document.querySelector('#next-card').classList.add('slide-in');
-
 
    
   });
