@@ -7,6 +7,8 @@
   const form = document.querySelector('form');
   const card = document.querySelector('#current-card');
   const instructions = document.querySelector('#instructions');
+  const pencil = document.querySelector('#pencil');
+
 
   card.addEventListener('click', function () {
     instructions.style.opacity = '0';
@@ -55,6 +57,12 @@
 
     document.querySelector('#current-card').classList.add('slide-out'); 
     document.querySelector('#next-card').classList.add('slide-in');
+
+    pencil.style.opacity = '1';
+    
+    pencil.addEventListener('click', function () {
+    window.location.reload();
+  });
 
    
   });

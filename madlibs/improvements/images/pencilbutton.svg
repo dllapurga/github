@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 98.26 32.94">
+  <defs>
+    <style>
+      .cls-1 {
+        font-family: Helvetica-Bold, Helvetica;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: -.04em;
+      }
+
+      .cls-2 {
+        fill: #ffe3cc;
+      }
+
+      .cls-3 {
+        stroke-width: .29px;
+      }
+
+      .cls-3, .cls-4, .cls-5, .cls-6 {
+        fill: none;
+        stroke: #231f20;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-4 {
+        stroke-width: .28px;
+      }
+
+      .cls-5 {
+        stroke-width: .16px;
+      }
+
+      .cls-6 {
+        stroke-width: .26px;
+      }
+
+      .cls-7 {
+        fill: #ffc50b;
+      }
+
+      .cls-8 {
+        fill: #efa8cd;
+      }
+    </style>
+  </defs>
+  <g>
+    <g>
+      <polygon points="98.02 16.47 92.55 21.09 92.55 11.84 98.02 16.47"/>
+      <polygon class="cls-2" points="92.55 11.84 92.55 21.09 78.88 32.65 78.88 .28 92.55 11.84"/>
+      <rect class="cls-7" x="19.21" y=".28" width="59.62" height="32.39"/>
+      <rect class="cls-8" x=".25" y=".28" width="18.91" height="32.39"/>
+    </g>
+    <g>
+      <rect class="cls-3" x="19.21" y=".28" width="59.62" height="32.39"/>
+      <rect class="cls-4" x=".25" y=".28" width="18.91" height="32.39"/>
+      <polygon class="cls-6" points="92.55 21.09 98.02 16.47 92.55 11.84 78.88 .28 78.88 32.65 92.55 21.09"/>
+      <polyline class="cls-5" points="92.55 11.81 92.55 11.84 92.55 21.09"/>
+    </g>
+  </g>
+  <text class="cls-1" transform="translate(26.86 19.82)"><tspan x="0" y="0">Restart</tspan></text>
+</svg>
