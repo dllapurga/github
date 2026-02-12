@@ -91,3 +91,16 @@ article a:hover {
   text-decoration: underline;
 }
 
+img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: block;
+  margin: 0 auto;
+  border-radius: 8px;
+}
+
+figcaption {
+  display:flex;
+  justify-content: space-evenly;
+}
