@@ -26,17 +26,29 @@ body {
 
 .img-bottom {
     z-index: 1;
+    border-radius: 10px;
 }
 
 .img-top {
     z-index: 2;
     transition: opacity 2s ease;
+    border-radius: 10px;
 }
 
 .img-top.fade {
     opacity: 0;
 }
 
+h1 {
+   
+    font-size: 30px;
+    font-weight: 500;
+    color: aliceblue;
+    margin-bottom: 30px;
+}
+
 p {
     color: aliceblue;
 }
+
+
