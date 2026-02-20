@@ -41,7 +41,7 @@ h1{
     border-radius: 50%;
     animation: pulse 1s infinite;
     content: ""; 
-    /* help w this */
+   
 }
 
 @keyframes pulse {
@@ -87,4 +87,20 @@ h1{
 @keyframes popIn {
   from { transform: scale(0.8); opacity: 0; }
   to { transform: scale(1); opacity: 1; }
+}
+
+
+
+
+.map-container {
+    position: relative;
+    width: 960px;
+    margin: 0 auto;
+    overflow: hidden; /* prevents zoom overflow */
+}
+
+/* Create a zoom layer effect */
+.map-container.zoomed #worldmap,
+.map-container.zoomed .pulse {
+    transition: transform 0.6s ease;
 }
