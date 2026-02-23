@@ -118,3 +118,71 @@ h1{
   transform: translate(-30%, -12%) scale(2);
 }
 
+#lanterns {
+  position: fixed;
+  top: -300px;            
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2000;
+
+  transition: top 0.6s ease;
+}
+
+#lanterns.show {
+  top: 0;
+}
+
+#kalo {
+  position: fixed;
+  bottom: -300px;            
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2000;
+
+  transition: bottom 0.6s ease;
+}
+
+#kalo.show {
+  bottom: 0;
+}
+
+
+#bambooleft {
+  position: fixed;
+  top: 400px;
+  left: -500px;
+  z-index: 9999;
+  
+  transition: left 0.6s ease;
+}
+
+#bambooleft.show {
+  left:0;   
+}
+
+#bambooright {
+  position: fixed;
+  top: 400px;
+  right: -500px;
+  z-index: 9999;
+  
+  transition: right 0.6s ease;
+}
+
+#bambooright.show {
+  right:0;   
+}
+
+#lotus {
+  position: fixed;
+  bottom: -300px;           
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2000;
+
+  transition: bottom 0.6s ease;
+}
+
+#lotus.show {
+  bottom: 0;
+}

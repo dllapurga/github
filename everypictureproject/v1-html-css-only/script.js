@@ -1,45 +1,57 @@
 (function () {
 
   'use strict';
-  console.log('reading js');
 
-    const hongkong = document.querySelector(".hongkong");
-    const hawaii = document.querySelector(".hawaii");
-    const philippines = document.querySelector(".philippines");
-    const vietnam = document.querySelector(".vietnam");
+  const map = document.querySelector("#worldmap");
+  const pulses = document.querySelectorAll(".pulse");
 
-    const hongkongModal = document.querySelector("#hongkongModal");
-    const hawaiiModal = document.querySelector("#hawaiiModal");
-    const philippinesModal = document.querySelector("#philippinesModal");
-    const vietnamModal = document.querySelector("#vietnamModal");
+  pulses.forEach(function(pulse) {
 
-    const closes = document.querySelectorAll(".close");
-    
-    // Open modal
-    hongkong.addEventListener("click", function() {
-    hongkongModal.classList.add("active");
+    pulse.addEventListener("click", function() {
+
+      const location = pulse.classList[1];
+
+     
+      map.classList.remove("hongkongZoom", "hawaiiZoom", "philippinesZoom", "vietnamZoom");
+
+      switch (location) {
+
+        case "hongkong":
+          map.classList.add("hongkongZoom");
+          document.querySelector("#hongkongModal").classList.add("active");
+          break;
+
+        case "hawaii":
+          map.classList.add("hawaiiZoom");
+          document.querySelector("#hawaiiModal").classList.add("active");
+          break;
+
+        case "philippines":
+          map.classList.add("philippinesZoom");
+          document.querySelector("#philippinesModal").classList.add("active");
+          break;
+
+        case "vietnam":
+          map.classList.add("vietnamZoom");
+          document.querySelector("#vietnamModal").classList.add("active");
+          break;
+      }
+
     });
 
-    hawaii.addEventListener("click", function() {
-    hawaiiModal.classList.add("active");
-    });
+  });
 
-    philippines.addEventListener("click", function() {
-    philippinesModal.classList.add("active");
-    });
+  document.querySelectorAll(".modal").forEach(function(modal) {
 
-    vietnam.addEventListener("click", function() {
-    vietnamModal.classList.add("active");
-    });
-
-    // Close when clicking outside
-    document.querySelectorAll(".modal").forEach(function(modal) {
     modal.addEventListener("click", function(e) {
-        if (e.target === modal) {
+
+      if (e.target === modal) {
         modal.classList.remove("active");
-        }
-    });
+        map.classList.remove("hongkongZoom", "hawaiiZoom", "philippinesZoom", "vietnamZoom");
+      }
+
     });
 
+  });
 
-}) ();
+})();
