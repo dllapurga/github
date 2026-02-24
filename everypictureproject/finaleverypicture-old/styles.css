@@ -3,7 +3,6 @@ body {
     margin:0;
     height: 100vh;
     overflow: hidden;
-    font-family: 'outfit', sans-serif;
 }
 
 h1{
@@ -12,20 +11,11 @@ h1{
   font-family: 'Indie Flower', san-serif;
   margin-top: 1em;
   font-size: 3em;
-  margin-bottom: -40px;
+  margin-bottom: 0px;
   position: relative;
   z-index: 1000;
 }
 
-#chinese-meaning {
-  font-size: 16px;
-  font-weight:600;
-}
-
-#chinese-text {
-  color:rgb(5, 132, 132);
- font-weight:500;
-}
 
 .pulse {
     position: absolute;
@@ -34,11 +24,11 @@ h1{
     background: rgb(1, 206, 199);
     border-radius: 50%;
     cursor: pointer;
-    /* transform: translate(-50%, -50%); */
+    transform: translate(-50%, -50%);
     z-index: 10;
 }
 
-/* .pulse::after {
+.pulse::after {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -47,29 +37,13 @@ h1{
     animation: pulse 1s infinite;
     content: ""; 
    
-} */
-
-
+}
 
 @keyframes pulse {
     0% { transform: scale(1); opacity: 0.8; }
     100% { transform: scale(3); opacity: 0; }
 }
 
-/* @keyframes pulsePhilippines {
-    15% { transform: scale(1); opacity: 0.8; }
-    100% { transform: scale(3); opacity: 0; }
-}
-
-@keyframes pulseHawaii {
-    30% { transform: scale(0); opacity: 0.8; }
-    100% { transform: scale(3); opacity: 0; }
-}
-
-@keyframes pulseVietnam {
-    45% { transform: scale(0); opacity: 0.8; }
-    100% { transform: scale(3); opacity: 0; }
-}  */
 
 .modal {
   display: none;
@@ -115,45 +89,16 @@ h1{
   overflow: hidden;
   position: relative;
   margin: auto;
-  background-color: blue;
-  transition: transform 0.6s ease;
-  transform-origin: center center;
 }
 
 
 #worldmap {
   width: 1200px;
   height: 750px;
-  /* transition: transform 0.6s ease;
-  transform-origin: center center; */
+  transition: transform 0.6s ease;
+  transform-origin: center center;
 }
 
-#pulseHongKong {
-  top: 45%;
-  left: 77%; 
-  animation: pulse 2s infinite;
-}
-
-#pulsePhilippines {
-  top: 50%;
-  left: 78%; 
-  animation: pulse 2s infinite;
-  animation-delay: .5s;
-}
-
-#pulseHawaii {
-  top: 51%;
-  left: 12%; 
-  animation: pulse 2s infinite;
-  animation-delay: .7s;
-}
-
-#pulseVietnam {
-  top: 52%;
-  left: 74%; 
-  animation: pulse 2s infinite;
-  animation-delay: .3s;
-}
 
 /* Zoomed Positions */
 
@@ -204,7 +149,7 @@ h1{
 
 #bambooleft {
   position: fixed;
-  top: 300px;
+  top: 400px;
   left: -500px;
   z-index: 9999;
   
@@ -217,7 +162,7 @@ h1{
 
 #bambooright {
   position: fixed;
-  top: 300px;
+  top: 400px;
   right: -500px;
   z-index: 9999;
   

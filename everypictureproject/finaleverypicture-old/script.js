@@ -7,8 +7,8 @@
   const bambooleft = document.querySelector("#bambooleft");
   const bambooright = document.querySelector("#bambooright");
   const lotus = document.querySelector("#lotus");
-  // glenda updated this to map-container
-  const map = document.querySelector(".map-container");
+
+  const map = document.querySelector("#worldmap");
   const pulses = document.querySelectorAll(".pulse");
 
   pulses.forEach(function(pulse) {
@@ -43,7 +43,6 @@
       map.classList.add("vietnamZoom");
       document.querySelector("#vietnamModal").classList.add("active");
       lotus.classList.add("show");
-
     }
 
     });
