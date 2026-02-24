@@ -17,12 +17,12 @@ h1{
   z-index: 1000;
 }
 
-#chinese-meaning {
+.chinese-meaning {
   font-size: 16px;
   font-weight:600;
 }
 
-#chinese-text {
+.chinese-text {
   color:rgb(5, 132, 132);
  font-weight:500;
 }
@@ -34,21 +34,8 @@ h1{
     background: rgb(1, 206, 199);
     border-radius: 50%;
     cursor: pointer;
-    /* transform: translate(-50%, -50%); */
     z-index: 10;
 }
-
-/* .pulse::after {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 216, 209);
-    border-radius: 50%;
-    animation: pulse 1s infinite;
-    content: ""; 
-   
-} */
-
 
 
 @keyframes pulse {
@@ -56,20 +43,6 @@ h1{
     100% { transform: scale(3); opacity: 0; }
 }
 
-/* @keyframes pulsePhilippines {
-    15% { transform: scale(1); opacity: 0.8; }
-    100% { transform: scale(3); opacity: 0; }
-}
-
-@keyframes pulseHawaii {
-    30% { transform: scale(0); opacity: 0.8; }
-    100% { transform: scale(3); opacity: 0; }
-}
-
-@keyframes pulseVietnam {
-    45% { transform: scale(0); opacity: 0.8; }
-    100% { transform: scale(3); opacity: 0; }
-}  */
 
 .modal {
   display: none;
