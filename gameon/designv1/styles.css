@@ -1,0 +1,14 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(2, auto); 
+  gap: 20px;
+  justify-content: center; 
+  align-content: center;    
+}
+
+body img {
+  width: 500px;
+  height: auto;
+}
