@@ -14,7 +14,8 @@ h1{
   font-size: 3em;
   margin-bottom: -40px;
   position: relative;
-  z-index: 1000;
+  z-index: 5000;
+
 }
 
 .chinese-meaning {
