@@ -109,27 +109,27 @@ h1{
 #pulseHongKong {
   top: 45%;
   left: 77%; 
-  animation: pulse 2s infinite;
+  animation: pulse 1.5s infinite;
 }
 
 #pulsePhilippines {
   top: 50%;
   left: 78%; 
-  animation: pulse 2s infinite;
+  animation: pulse 1.5s infinite;
   animation-delay: .5s;
 }
 
 #pulseHawaii {
   top: 51%;
   left: 12%; 
-  animation: pulse 2s infinite;
+  animation: pulse 1.5s infinite;
   animation-delay: .7s;
 }
 
 #pulseVietnam {
   top: 52%;
   left: 74%; 
-  animation: pulse 2s infinite;
+  animation: pulse 1.5s infinite;
   animation-delay: .3s;
 }
 
