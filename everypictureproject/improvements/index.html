@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Every Picture Project V1</title>
+
+     <!-- Normalize Script -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+     
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+        
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    
+    
+    <!-- My Styles -->
+    <link href="styles.css" rel="stylesheet">
+
+    <!-- JavaScript -->
+    <script src="script.js" defer></script>
+
+</head>
+<body>
+    <h1>Hi! My name is Derick, but to others I'm...</h1>
+
+    <div class="map-container">
+        <div>
+            <img src="images/worldmap_final.jpg" alt="world map" id="worldmap" height="750" width="1200">
+
+            <div class="pulse hongkong" id="pulseHongKong"></div>
+            <div class="pulse philippines" id="pulsePhilippines"></div>
+            <div class="pulse hawaii" id="pulseHawaii" ></div>
+            <div class="pulse vietnam" id="pulseVietnam"></div>
+        </div>
+    </div>
+        
+        <!-- Hong Kong Modal -->
+        <img src="images/lanterns.svg" id="lanterns" alt="lanterns" height="272" width="932">
+        <div class="modal" id="hongkongModal">
+            <div class="modal-content">
+                
+                <img src="images/popogungung.jpg" alt="popo and gunggung" id="hongkong" width="400" height="267">
+                <h2>Li Hoi Wan (李愷昀)</h2>
+                <h3 class="chinese-meaning">
+                    <span class="chinese-text">李:</span> My mother's maiden name <br>
+                    <span class="chinese-text">愷:</span> cheerful, harmonious, kind-hearted, benevolent <br>
+                    <span class="chinese-text">昀:</span> soft sunlight, warmth, radiance</h3>
+                
+                <p>My Chinese name was given to me by grandma and grandpa. The name symbolizes a person whose presence brightens those around them with a warm and cheerful personality. It conveys someone who leads a peaceful and joyful life. The name reflects resilience expressed through softness and strength expressed through kindness and compassion.</p>
+            </div>
+        </div>
+
+        <!-- Hawaii Modal -->
+        <img src="images/kalo.svg" id="kalo" alt="kalo" height="268" width="1200">
+        <div class="modal" id="hawaiiModal">
+            <div class="modal-content">
+                <img src="images/moani.jpg" alt="auntie moani" id="hawaii" width="400" height="267">
+                <h2>Kahanuakealohamaikalani</h2>
+                <h3>The breath of love from the heavens</h3>
+                <p>My Hawaiian name was given to me by my Auntie Moani'alaopuna. The name implies a person who carries themselves with warmth and sincerity. It symbolizes grounded compassion, a calm presence, and a life shaped by aloha for others. It expresses a sense of love that comes from a sacred source. As I was considered a "miracle baby", this name was made to present me as a blessing to my family.</p>
+            </div>
+        </div>
+
+        <!-- Philippines Modal -->
+        <img src="images/bamboo-left.svg" id="bambooleft" alt="bamboo1" height="540" width="413">
+        <img src="images/bamboo-right.svg" id="bambooright" alt="bamboo2" height="540" width="413">
+        <div class="modal" id="philippinesModal">
+            <div class="modal-content">
+                <img src="images/lololola.jpg" alt="gma and gpa" id="philippines" width="400" height="267">
+                <h2>Huni (ᜑᜓᜈᜒ)</h2>
+                <h3>A bird's song or melody</h3>
+                <p>This Filipino nickname was given to me by my grandmother. This nickname was given to me because as a child, all I ever did was sing. According to her, I was a cheeful kid always dancing and singing around her house. She would also teach me different songs in Tagalog which led to me learning the language. She used to always call my singing a "gift" and always encouraged me to sing and perform at family events.</p>
+            </div>
+        </div>
+
+         <!-- Vietnam Modal -->
+        <img src="images/lotus.svg" id="lotus" alt="lotus" width="1200" height="190">
+        <div class="modal" id="vietnamModal">
+            <div class="modal-content">
+                <img src="images/popo.jpg" alt="popo" width="400" height="267">
+                <h2>Lý Khải Vân</h2>
+                <h3 class="chinese-meaning">
+                    <span class="chinese-text">Lý (李):</span> My mother's maiden name <br>
+                    <span class="chinese-text">Khải (愷):</span> cheerful, harmonious, kind-hearted, benevolent <br>
+                    <span class="chinese-text">Vân (昀):</span> soft sunlight, warmth, radiance</h3>
+                
+                <p>My mother's side of the family are Chinese from Vietnam, so I was raised with both the Cantonese and Vietnamese cultures and languages. My Vietnamese name is the Sino-Vietnamese variation of my Chinese name. Although the translation doesn't exactly hold the same meaning as the characters, to my Vietnamese speaking relatives, I was and am always Vân. Therefore, this name too is part of my identity.</p>
+            </div>
+        </div>
+
+  
+</body>
+</html>
