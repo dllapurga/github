@@ -14,7 +14,7 @@ h1{
   font-size: 3em;
   margin-bottom: -40px;
   position: relative;
-  z-index: 5000;
+  z-index: 1000; /*from 1000-->5000*/
 
 }
 
