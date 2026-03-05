@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starter Screen</title>
+      <!-- Normalize Script -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+     
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Outfit:wght@100..900&family=Rubik+Glitch&display=swap" rel="stylesheet">
+
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    
+    
+    <!-- My Styles -->
+    <link href="styles.css" rel="stylesheet">
+
+    <!-- JavaScript -->
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <h1>*Game Name*</h1>
+
+    <section id="startScreen">
+        <h2 id="playerText">Player 1: Choose your fighter</h2>
+
+        <div id="photo-gallery">
+            <img src="images/grace.png" alt="grace" height="300" width="215"> 
+            <img src="images/nathan.png" alt="nathan" height="300" width="215"> 
+            <img src="images/sidney.png" alt="sidney" height="300" width="215"> 
+            <img src="images/derick.png" alt="derick" height="300" width="215"> 
+            <img src="images/chris.png" alt="chris" height="300" width="215"> 
+        </div>
+
+        <button id="start" disabled>Start game!</button>
+    </section>
+
+
+     <section id="battleScreen" class="hidden">
+        <h1>Battle Screen</h1>
+
+        <div id="arena">
+            <img id="player1" src="">
+            <img id="player2" src="">
+        </div>
+
+         <p id="versus">VS</p>
+    </section>
+
+   
+
+</body>
+</html>

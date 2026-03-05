@@ -1,0 +1,96 @@
+body{
+    
+    margin: 0;
+    padding: 0;
+    height: 750px;
+    overflow: hidden;
+    background-image: url("images/meadow.jpg");
+    background-size: cover;    
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+h1{
+    font-family: "Outfit", sans-serif;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h2 {
+    font-family: "Outfit", sans-serif;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+#photo-gallery{
+    display: flex;            
+    justify-content: center;    
+    align-items: center;        
+    gap: 20px; 
+}
+
+img {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+#photo-gallery img.hover-enabled:hover {
+    border: 5px solid red;
+    border-radius: 10px;
+}
+
+
+#photo-gallery img {
+    transition: transform 0.7s ease-in, opacity 0.5s ease-in;
+    cursor: pointer;
+}
+
+.drop {
+    transform: translateY(100vh);
+}
+
+#start{
+    position: absolute;
+    bottom: 40px;       
+    left: 50%;          
+    transform: translateX(-50%);
+    padding: 10px 50px;
+    font-family: 'Outfit', sans-serif;
+    border-radius: 50px;
+}
+
+#start:not(:disabled):hover {
+    background-color: lightseagreen;
+    color: whitesmoke;
+    font-weight: 500;
+}
+
+.hidden {
+    display: none;
+}
+
+#player1,
+#player2 {
+    height: 300px;
+    width: 215px;
+}
+
+#arena{
+    display: flex;
+    justify-content: center;  
+    align-items: center;      
+    gap: 600px;  
+}
+ 
+#versus{
+  
+    font-family: 'Rubik Glitch', sans-serif;
+    color: rgb(187, 33, 33);
+    font-size: 100px;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
