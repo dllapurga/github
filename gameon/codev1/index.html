@@ -15,7 +15,6 @@
     <!--Font Awesome-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     
-    
     <!-- My Styles -->
     <link href="styles.css" rel="stylesheet">
 
@@ -24,6 +23,12 @@
 </head>
 <body>
     <h1>*Game Name*</h1>
+
+    <div id="settings">
+        <button id="quit" disabled>Quit game!</button>
+        <i class="fas fa-music"></i>
+       
+    </div>
 
     <section id="startScreen">
         <h2 id="playerText">Player 1: Choose your fighter</h2>
@@ -36,19 +41,36 @@
             <img src="images/chris.png" alt="chris" height="300" width="215"> 
         </div>
 
-        <button id="start" disabled>Start game!</button>
+        <p class="instructions">Pick your players and press start to begin the game!</p>
+        <button id="start">Start game!</button>
     </section>
 
 
      <section id="battleScreen" class="hidden">
-        <h1>Battle Screen</h1>
+        <h1>ARENA</h1>
 
         <div id="arena">
-            <img id="player1" src="">
-            <img id="player2" src="">
+            <div>
+                <div class="health">
+                    <div id="healthbar0"><div></div></div><p id="monsterhealth0">100%</p>
+                </div>
+
+                <img id="player1" src="">
+            </div>
+
+
+            <p id="versus">VS</p>
+
+            <div>
+                <div class="health">
+                    <div id="healthbar1"><div></div></div><p id="monsterhealth1">100%</p>
+                </div>
+
+                <img id="player2" src="">
+            </div>
         </div>
 
-         <p id="versus">VS</p>
+         
     </section>
 
    

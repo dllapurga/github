@@ -10,6 +10,22 @@ body{
     background-repeat: no-repeat;
 }
 
+#settings{
+    display:flex;
+    font-size: 20px;
+    gap: 24px;
+    margin-left: 20px;
+}
+
+#quit{
+    font-family: 'Outfit', sans-serif;
+    border-radius: 30px;
+}
+
+.fas{
+    font-size:26px;
+}
+
 h1{
     font-family: "Outfit", sans-serif;
     display:flex;
@@ -33,7 +49,9 @@ h2 {
 }
 
 img {
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    border: 5px solid transparent;
+    /* box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); */
+    border-radius: 10px;
 }
 
 #photo-gallery img.hover-enabled:hover {
@@ -53,7 +71,7 @@ img {
 
 #start{
     position: absolute;
-    bottom: 40px;       
+    bottom: 90px;       
     left: 50%;          
     transform: translateX(-50%);
     padding: 10px 50px;
@@ -93,4 +111,71 @@ img {
     top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+.instructions {
+    position: absolute;
+    bottom: 150px;       
+    left: 50%;          
+    transform: translateX(-50%);
+    font-family: 'Outfit', sans-serif;
+    font-size: 22px;
+    margin: 0px;
+    color:aliceblue;
+}
+
+#playerText {
+    color: red;
+}
+
+
+/*Health*/
+.health {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+#healthbar0, #healthbar1 {
+    width: 75%;
+    height: 30px;
+    border: 2px solid #333;
+    position: relative;
+    overflow: hidden;    
+    border-radius: 50px;
+}
+
+#healthbar1 div{
+    width: 100%;
+    height: 30px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(0deg, rgb(227, 25, 2) 0%, rgb(253, 149, 144) 50%, rgb(227, 25, 2) 100%); 
+    border-radius: 50px;
+}
+
+#healthbar0 div{
+    width: 100%;
+    height: 30px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(0deg, rgb(0, 89, 178) 0%, rgb(77, 196, 251) 50%, rgb(0, 89, 178) 100%); 
+}
+
+#monsterhealth0 {
+
+font-family: 'Outfit', sans-serif;
+color:rgb(3, 117, 217);
+font-size: 20px;
+font-weight: 800;
+}
+
+#monsterhealth1 {
+
+font-family: 'Outfit', sans-serif;
+color:rgb(221, 22, 8);
+font-size: 20px;
+font-weight: 800;
 }
