@@ -1,0 +1,292 @@
+(function () {
+
+'use strict';
+
+console.log('reading js');
+
+/* -----------------------------
+   ELEMENTS
+----------------------------- */
+
+const startBtn = document.querySelector('#start');
+const startScreen = document.querySelector('#startScreen');
+const battleScreen = document.querySelector('#battleScreen');
+
+const fighters = document.querySelectorAll('#photo-gallery img');
+const playerText = document.querySelector('#playerText');
+
+const player1 = document.querySelector('#player1');
+const player2 = document.querySelector('#player2');
+
+const attackBtn = document.querySelector('#attack');
+const playAgainBtn = document.querySelector('#playAgain');
+const fireball = document.querySelector('#fireball');
+
+const messages = document.querySelector('#messages');
+
+const bgMusic = document.querySelector('#bgMusic');
+const blast = document.querySelector('#blast');
+
+const quitBtn = document.querySelector('#quit');
+
+/* -----------------------------
+   PLAYER SELECTION
+----------------------------- */
+
+let currentPlayer = 1;
+let selections = 0;
+
+let player1Selection = null;
+let player2Selection = null;
+
+fighters.forEach(function (img) {
+    img.classList.add('hover-enabled');
+});
+
+fighters.forEach(function (img) {
+
+    img.addEventListener('click', function () {
+
+        if (img.classList.contains('selected')) return;
+
+        img.classList.add('selected');
+        img.classList.add('drop');
+
+        if (currentPlayer === 1) {
+            player1Selection = img.src;
+        } else {
+            player2Selection = img.src;
+        }
+
+        selections++;
+
+        if (currentPlayer === 1) {
+            playerText.textContent = "Player 2: Choose your fighter";
+            playerText.style.color = 'red';
+            currentPlayer = 2;
+        } else {
+            playerText.textContent = "Both fighters selected!";
+        }
+
+        if (selections === 2) {
+
+            startBtn.disabled = false;
+
+            fighters.forEach(function (img) {
+                img.classList.remove('hover-enabled');
+            });
+        }
+    });
+
+});
+
+
+/* -----------------------------
+   GAME DATA
+----------------------------- */
+
+const gameData = {
+    health: [100, 100],
+    attack: [5, 10, 15, 20, 25],
+    index: 0
+};
+
+
+/* -----------------------------
+   START GAME
+----------------------------- */
+
+startBtn.addEventListener('click', function () {
+
+    bgMusic.volume = 0.5; // optional volume control
+    bgMusic.play();
+
+    quitBtn.disabled = false;
+
+    player1.src = player1Selection;
+    player2.src = player2Selection;
+
+    startScreen.classList.add('hidden');
+    battleScreen.classList.remove('hidden');
+
+    gameData.index = Math.round(Math.random());
+
+    messages.innerHTML =
+    `<p class="attackMessage">Battle begins! Player ${gameData.index + 1} attacks first!</p>`;
+
+    attackBtn.classList.remove('hidden');
+});
+
+
+/* -----------------------------
+   ATTACK BUTTON
+----------------------------- */
+
+attackBtn.addEventListener('click', playerAttack);
+
+
+/* -----------------------------
+   ATTACK FUNCTION
+----------------------------- */
+
+function playerAttack(){
+
+    blast.currentTime = 0;
+    blast.play();
+
+    const attackValue = Math.floor(Math.random() * 5);
+    const defenseValue = Math.floor(Math.random() * 3);
+
+    let attacker = gameData.index;
+    let defender = gameData.index ? 0 : 1;
+
+    let damage = gameData.attack[attackValue];
+
+    attackBtn.classList.add('hidden');
+
+    gameData.health[defender] -= damage;
+
+    if(gameData.health[defender] < 0){
+        gameData.health[defender] = 0;
+    }
+
+    messages.innerHTML =
+    `<p class="attackMessage">Player ${attacker + 1} attacks for ${damage} damage!</p>`;
+
+
+    /* ANIMATIONS */
+
+    let attackerImg = attacker === 0 ? player1 : player2;
+    let defenderImg = defender === 0 ? player1 : player2;
+
+   
+   
+   
+   
+   
+   
+    /* FIREBALL */
+
+fireball.classList.remove('hidden');
+
+if(attacker === 0){
+    fireball.classList.add('fireball-right');
+}
+else{
+    fireball.classList.add('fireball-left');
+}
+
+/* attack animation */
+
+attackerImg.classList.add(`attack${attackValue}`);
+
+setTimeout(function(){
+    defenderImg.classList.add(`defend${defenseValue}`);
+},300);
+
+
+
+
+
+
+
+    attackerImg.classList.add(`attack${attackValue}`);
+
+    setTimeout(function(){
+        defenderImg.classList.add(`defend${defenseValue}`);
+    },300);
+
+
+    updateHealth(defender);
+    checkWinner(defender);
+
+
+
+
+
+
+    setTimeout(function(){
+    fireball.className = "hidden";
+    fireball.classList.remove('fireball-left','fireball-right');
+},800);
+
+
+
+
+
+
+    setTimeout(function(){
+
+        player1.className = "";
+        player2.className = "";
+
+    },1000);
+}
+
+
+/* -----------------------------
+   UPDATE HEALTH BAR
+----------------------------- */
+
+function updateHealth(player){
+
+    let health = gameData.health[player];
+
+    document.querySelector(`#healthbar${player} div`).style.width = `${health}%`;
+
+    document.querySelector(`#monsterhealth${player}`).innerHTML = `${health}%`;
+}
+
+
+/* -----------------------------
+   WIN CONDITION
+----------------------------- */
+
+function checkWinner(player){
+
+    setTimeout(function(){
+
+        let health = Math.floor(parseFloat(gameData.health[player]));
+
+        if(health < 1){
+
+            messages.innerHTML =
+            `<p class="attackMessage">Player ${player === 0 ? 2 : 1} wins the battle!</p>`;
+
+            attackBtn.classList.add('hidden');
+            playAgainBtn.classList.remove('hidden');
+            
+            return;
+        }
+        else {
+
+            gameData.index = gameData.index ? 0 : 1;
+
+            messages.innerHTML =
+            `<p class="attackMessage">Player ${gameData.index + 1}'s turn!</p>`;
+
+            setTimeout(function(){
+                attackBtn.classList.remove('hidden');
+            }, 500);
+        }
+
+    },2000);
+}
+
+
+/* -----------------------------
+   PLAY AGAIN BUTTON
+----------------------------- */
+
+playAgainBtn.addEventListener('click', function(){
+    location.reload();
+});
+
+/* -----------------------------
+   QUIT BUTTON
+----------------------------- */
+quitBtn.addEventListener('click', function(){
+    location.reload();
+});
+
+})();

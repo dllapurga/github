@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starter Screen</title>
+      <!-- Normalize Script -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+     
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Outfit:wght@100..900&family=Rubik+Glitch&display=swap" rel="stylesheet">
+
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    
+    <!-- My Styles -->
+    <link href="styles.css" rel="stylesheet">
+
+    <!-- JavaScript -->
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <h1>Friend Battle Royale</h1>
+
+    <div id="settings">
+        <button id="quit" disabled>Quit game!</button>
+        <i class="fas fa-music"></i>
+       
+    </div>
+
+    <section id="startScreen">
+        <h2 id="playerText">Player 1: Choose your fighter</h2>
+
+        <div id="photo-gallery">
+            <img src="images/grace.png" alt="grace" height="300" width="215"> 
+            <img src="images/nathan.png" alt="nathan" height="300" width="215"> 
+            <img src="images/sidney.png" alt="sidney" height="300" width="215"> 
+            <img src="images/derick.png" alt="derick" height="300" width="215"> 
+            <img src="images/chris.png" alt="chris" height="300" width="215"> 
+        </div>
+
+        <p class="instructions">Pick your players and press start to begin the game!</p>
+        <button id="start" disabled>Start game!</button>
+    </section>
+
+
+     <section id="battleScreen" class="hidden">
+        <!-- <h1>ARENA</h1> -->
+        <div id="messages"></div>
+
+        <div id="arena">
+            <div>
+                <div class="health">
+                    <div id="healthbar0"><div></div></div><p id="monsterhealth0">100%</p>
+                </div>
+
+                <img id="player1" src="">
+                <p id="player1Label" class="playerLabel">Player 1</p>
+            </div>
+
+
+            <p id="versus">VS</p>
+
+            <div>
+                <div class="health">
+                    <div id="healthbar1"><div></div></div><p id="monsterhealth1">100%</p>
+                </div>
+
+                <img id="player2" src="">
+                <p id="player2Label" class="playerLabel">Player 2</p>
+            </div>
+        </div>
+
+        <img id="fireball" src="images/fireball.svg" class="hidden">
+        <button id="attack" class="hidden">Attack!</button>
+        <button id="playAgain" class="hidden">Play Again</button>
+        
+    </section>
+
+   <!-- AUDIO FILES -->
+    <audio id="bgMusic" loop>
+        <source src="audio/background.mp3" type="audio/mpeg">
+    </audio>
+
+    <audio id="blast">
+        <source src="audio/blast.mp3" type="audio/mpeg">
+    </audio>
+</body>
+</html>
