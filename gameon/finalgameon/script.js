@@ -5,7 +5,7 @@
 console.log('reading js');
 
 /* -----------------------------
-   ELEMENTS
+   Variables
 ----------------------------- */
 
 const startBtn = document.querySelector('#start');
@@ -31,7 +31,7 @@ const quitBtn = document.querySelector('#quit');
 const audioToggle = document.querySelector('#audioToggle');
 
 /* -----------------------------
-   PLAYER SELECTION
+   Select a player
 ----------------------------- */
 
 let currentPlayer = 1;
@@ -83,7 +83,7 @@ fighters.forEach(function (img) {
 
 
 /* -----------------------------
-   GAME DATA
+   Game Data
 ----------------------------- */
 
 const gameData = {
@@ -94,7 +94,7 @@ const gameData = {
 
 
 /* -----------------------------
-   START GAME
+   Start game
 ----------------------------- */
 
 startBtn.addEventListener('click', function () {
@@ -119,15 +119,12 @@ startBtn.addEventListener('click', function () {
 });
 
 
-/* -----------------------------
-   ATTACK BUTTON
------------------------------ */
 
 attackBtn.addEventListener('click', playerAttack);
 
 
 /* -----------------------------
-   ATTACK FUNCTION
+   Attack
 ----------------------------- */
 
 function playerAttack(){
@@ -155,15 +152,9 @@ function playerAttack(){
     `<p class="attackMessage">Player ${attacker + 1} attacks for ${damage} damage!</p>`;
 
 
-    /* ANIMATIONS */
-
     let attackerImg = attacker === 0 ? player1 : player2;
     let defenderImg = defender === 0 ? player1 : player2;
 
-   
-   
-   
-   
    
    
     /* FIREBALL */
@@ -187,10 +178,6 @@ setTimeout(function(){
 
 
 
-
-
-
-
     attackerImg.classList.add(`attack${attackValue}`);
 
     setTimeout(function(){
@@ -202,17 +189,10 @@ setTimeout(function(){
     checkWinner(defender);
 
 
-
-
-
-
     setTimeout(function(){
     fireball.className = "hidden";
     fireball.classList.remove('fireball-left','fireball-right');
 },800);
-
-
-
 
 
 
@@ -226,7 +206,7 @@ setTimeout(function(){
 
 
 /* -----------------------------
-   UPDATE HEALTH BAR
+   Healthbar
 ----------------------------- */
 
 function updateHealth(player){
@@ -240,7 +220,7 @@ function updateHealth(player){
 
 
 /* -----------------------------
-   WIN CONDITION
+   Winning Condition
 ----------------------------- */
 
 function checkWinner(player){
@@ -276,7 +256,7 @@ function checkWinner(player){
 
 
 /* -----------------------------
-   PLAY AGAIN BUTTON
+   Play again button
 ----------------------------- */
 
 playAgainBtn.addEventListener('click', function(){
@@ -284,7 +264,7 @@ playAgainBtn.addEventListener('click', function(){
 });
 
 /* -----------------------------
-   QUIT BUTTON
+   Quit button
 ----------------------------- */
 quitBtn.addEventListener('click', function(){
     location.reload();

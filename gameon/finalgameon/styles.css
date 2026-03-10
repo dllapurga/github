@@ -46,14 +46,13 @@ body{
     padding: 5px 15px;
 
     position: absolute;
-    left: 220px;
+    left: 200px;
     top: 50%;
     transform: translateY(-50%);
 }
 
 #audio:hover{
     background-color:rgb(192, 35, 17);
-    
 }
 
 .fas{
@@ -65,11 +64,32 @@ body{
     color:whitesmoke;
 }
 
+#instructionBtn{
+    border-radius:50px;
+    background-color: whitesmoke;
+    border-color:#858585;
+    padding: 5px 15px;
+
+    position: absolute;
+    left: 280px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#instructionBtn:hover{
+    background-color:rgb(192, 35, 17); 
+}
+
+#instructionBtn:hover .fas{
+    color:whitesmoke;
+}
+
 
 h1{
-    
-    font-family: "Outfit", sans-serif;
+    color: rgb(255, 0, 0); 
+    font-family: "Bitcount Prop Double Ink", sans-serif;
     margin: 10px 0;
+    font-size:60px;
 }
 
 h2 {
@@ -251,7 +271,8 @@ font-weight: 800;
     font-family:'Outfit', sans-serif;
     font-size:22px;
     text-align:center;
-    color:white;
+    color:rgb(164, 34, 228);
+    font-weight:600;
 }
 
 #reset{
@@ -378,7 +399,7 @@ font-weight: 800;
     width:120px;
     top:50%;
     transform:translateY(-50%);
-     z-index:1;
+    z-index:1;
 }
 
 .fireball-right{
@@ -398,8 +419,8 @@ font-weight: 800;
 }
 
 @keyframes fireLeft{
-    from{ transform: scaleX(-1) translateX(0); }
-    to{ transform: scaleX(-1) translateX(-400px); }
+    from{ transform: scaleX(-1) translateX(700px); }
+    to{ transform: scaleX(-1) translateX(-100px); }
 
 }
 
