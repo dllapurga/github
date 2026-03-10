@@ -28,6 +28,7 @@ const bgMusic = document.querySelector('#bgMusic');
 const blast = document.querySelector('#blast');
 
 const quitBtn = document.querySelector('#quit');
+const audioToggle = document.querySelector('#audioToggle');
 
 /* -----------------------------
    PLAYER SELECTION
@@ -287,6 +288,25 @@ playAgainBtn.addEventListener('click', function(){
 ----------------------------- */
 quitBtn.addEventListener('click', function(){
     location.reload();
+});
+
+let soundOn = true;
+
+audioToggle.addEventListener('click', function(){
+
+    soundOn = !soundOn;
+
+    bgMusic.muted = !soundOn;
+    blast.muted = !soundOn;
+
+    if(soundOn){
+        audioToggle.classList.remove('fa-volume-mute');
+        audioToggle.classList.add('fa-music');
+    } else {
+        audioToggle.classList.remove('fa-music');
+        audioToggle.classList.add('fa-volume-mute');
+    }
+
 });
 
 })();
