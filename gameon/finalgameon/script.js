@@ -30,6 +30,27 @@ const blast = document.querySelector('#blast');
 const quitBtn = document.querySelector('#quit');
 const audioToggle = document.querySelector('#audioToggle');
 
+const instructionBtn = document.querySelector('#instructionBtn');
+const instructionModal = document.querySelector('#instructionModal');
+const closeModal = document.querySelector('#closeModal');
+
+/* -----------------------------
+   Modal
+----------------------------- */
+instructionBtn.addEventListener('click', function () {
+    instructionModal.classList.remove('hidden');
+});
+
+closeModal.addEventListener('click', function () {
+    instructionModal.classList.add('hidden');
+});
+
+// Also close if user clicks the dark backdrop
+instructionModal.addEventListener('click', function (e) {
+    if (e.target === instructionModal) {
+        instructionModal.classList.add('hidden');
+    }
+});
 /* -----------------------------
    Select a player
 ----------------------------- */
@@ -172,9 +193,9 @@ else{
 
 attackerImg.classList.add(`attack${attackValue}`);
 
-setTimeout(function(){
-    defenderImg.classList.add(`defend${defenseValue}`);
-},300);
+// setTimeout(function(){
+//     defenderImg.classList.add(`defend${defenseValue}`);
+// },800);
 
 
 
@@ -182,7 +203,7 @@ setTimeout(function(){
 
     setTimeout(function(){
         defenderImg.classList.add(`defend${defenseValue}`);
-    },300);
+    },600);
 
 
     updateHealth(defender);
@@ -201,7 +222,7 @@ setTimeout(function(){
         player1.className = "";
         player2.className = "";
 
-    },1000);
+    },2000);
 }
 
 

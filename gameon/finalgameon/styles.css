@@ -167,7 +167,7 @@ img {
 #versus{
 
     font-family: 'Rubik Glitch', sans-serif;
-    color: rgb(187, 33, 33);
+    color: rgb(255, 255, 255);
     font-size: 100px;
     position: absolute;
     top: 30%;
@@ -415,7 +415,7 @@ font-weight: 800;
 
 @keyframes fireRight{
     from{ transform: translateX(700px); }
-    to{ transform: translateX(0); }
+    to{ transform: translateX(-100px); }
 }
 
 @keyframes fireLeft{
@@ -424,3 +424,54 @@ font-weight: 800;
 
 }
 
+/*Instructions Modal*/
+#instructionModal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+#modalContent {
+    background: whitesmoke;
+    border-radius: 20px;
+    padding: 40px 50px;
+    max-width: 450px;
+    text-align: center;
+    font-family: 'Outfit', sans-serif;
+}
+
+#modalContent h2 {
+    color: rgb(192, 35, 17);
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+#modalContent ul {
+    text-align: left;
+    line-height: 2;
+    font-size: 16px;
+    color: #444;
+}
+
+#closeModal {
+    margin-top: 25px;
+    padding: 10px 40px;
+    font-family: 'Outfit', sans-serif;
+    border-radius: 40px;
+    border: 1px solid #858585;
+    cursor: pointer;
+}
+
+#closeModal:hover {
+    background-color: lightseagreen;
+    color: whitesmoke;
+    font-weight: 500;
+}
+
+#instructionModal.hidden {
+    display: none;
+}
