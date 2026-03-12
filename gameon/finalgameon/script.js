@@ -120,7 +120,7 @@ const gameData = {
 
 startBtn.addEventListener('click', function () {
 
-    bgMusic.volume = 0.5; // optional volume control
+    
     bgMusic.play();
 
     quitBtn.disabled = false;
@@ -178,7 +178,7 @@ function playerAttack(){
 
    
    
-    /* FIREBALL */
+    /* Fireball */
 
 fireball.classList.remove('hidden');
 
@@ -219,10 +219,10 @@ attackerImg.classList.add(`attack${attackValue}`);
 
     setTimeout(function(){
 
-        player1.className = "";
-        player2.className = "";
+    player1.className = "";
+    player2.className = "";
 
-    },2000);
+},2000);
 }
 
 
