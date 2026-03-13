@@ -26,11 +26,11 @@ body{
     background-color: whitesmoke;
     border-color:#858585;
     color:#666666;
-
     position: absolute;
     left: 20px;
     top: 50%;
     transform: translateY(-50%);
+    display: none;
 }
 
 #quit:hover{
@@ -44,11 +44,11 @@ body{
     background-color: whitesmoke;
     border-color:#858585;
     padding: 5px 15px;
-
     position: absolute;
     left: 200px;
     top: 50%;
     transform: translateY(-50%);
+     display: none;
 }
 
 #audio:hover{
@@ -71,7 +71,7 @@ body{
     padding: 5px 15px;
 
     position: absolute;
-    left: 280px;
+    left: 50px;
     top: 50%;
     transform: translateY(-50%);
 }
@@ -199,6 +199,13 @@ img {
     color: white;
 }
 
+#player1Label {
+    color: rgb(66, 173, 255);
+}
+
+#player2Label {
+    color: rgb(255, 101, 84);
+}
 
 /*Health*/
 .health {
@@ -474,5 +481,55 @@ font-weight: 800;
 }
 
 #instructionModal.hidden {
+    display: none;
+}
+
+
+#winnerModal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+#winnerContent {
+    background: whitesmoke;
+    border-radius: 20px;
+    padding: 50px 60px;
+    text-align: center;
+    font-family: 'Outfit', sans-serif;
+}
+
+#winnerContent h2 {
+    font-size: 36px;
+    color: rgb(39, 39, 39);
+    margin-bottom: 10px;
+}
+
+#winnerContent p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+#winnerPlayAgain {
+    padding: 10px 40px;
+    font-family: 'Outfit', sans-serif;
+    border-radius: 40px;
+    border: 1px solid #858585;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#winnerPlayAgain:hover {
+    background-color: lightseagreen;
+    color: whitesmoke;
+    font-weight: 500;
+}
+
+#winnerModal.hidden {
     display: none;
 }

@@ -57,7 +57,7 @@
                     <div id="healthbar0"><div></div></div><p id="monsterhealth0">100%</p>
                 </div>
 
-                <img id="player1" src="" alt="player1">
+                <img id="player1" src="images/transparent.png" alt="player1">
                 <p id="player1Label" class="playerLabel">Player 1</p>
             </div>
 
@@ -69,14 +69,14 @@
                     <div id="healthbar1"><div></div></div><p id="monsterhealth1">100%</p>
                 </div>
 
-                <img id="player2" src="" alt="player2">
+                <img id="player2" src="images/transparent.png" alt="player2">
                 <p id="player2Label" class="playerLabel">Player 2</p>
             </div>
         </div>
 
         <img id="fireball" src="images/fireball.svg" alt="fireball" class="hidden">
         <button id="attack" class="hidden">Attack!</button>
-        <button id="playAgain" class="hidden">Play Again</button>
+        <!-- <button id="playAgain" class="hidden">Play Again</button> -->
         
     </section>
 
@@ -104,5 +104,12 @@
         </div>
     </div>
 
+    <div id="winnerModal" class="hidden">
+        <div id="winnerContent">
+            <h2 id="winnerTitle">🏆 Player 1 Wins!</h2>
+            <p id="winnerSubtitle">What a battle!</p>
+            <button id="winnerPlayAgain">Play Again</button>
+        </div>
+    </div>
 </body>
 </html>

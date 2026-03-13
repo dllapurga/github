@@ -19,7 +19,6 @@ const player1 = document.querySelector('#player1');
 const player2 = document.querySelector('#player2');
 
 const attackBtn = document.querySelector('#attack');
-const playAgainBtn = document.querySelector('#playAgain');
 const fireball = document.querySelector('#fireball');
 
 const messages = document.querySelector('#messages');
@@ -34,6 +33,10 @@ const instructionBtn = document.querySelector('#instructionBtn');
 const instructionModal = document.querySelector('#instructionModal');
 const closeModal = document.querySelector('#closeModal');
 
+const winnerModal = document.querySelector('#winnerModal');
+const winnerTitle = document.querySelector('#winnerTitle');
+const winnerPlayAgain = document.querySelector('#winnerPlayAgain');
+
 /* -----------------------------
    Modal
 ----------------------------- */
@@ -45,12 +48,12 @@ closeModal.addEventListener('click', function () {
     instructionModal.classList.add('hidden');
 });
 
-// Also close if user clicks the dark backdrop
 instructionModal.addEventListener('click', function (e) {
     if (e.target === instructionModal) {
         instructionModal.classList.add('hidden');
     }
 });
+
 /* -----------------------------
    Select a player
 ----------------------------- */
@@ -91,7 +94,6 @@ fighters.forEach(function (img) {
         }
 
         if (selections === 2) {
-
             startBtn.disabled = false;
 
             fighters.forEach(function (img) {
@@ -120,8 +122,10 @@ const gameData = {
 
 startBtn.addEventListener('click', function () {
 
-    
     bgMusic.play();
+    document.querySelector('#quit').style.display = 'block';
+    document.querySelector('#audio').style.display = 'block';
+    document.querySelector('#instructionBtn').style.left = '280px';
 
     quitBtn.disabled = false;
 
@@ -138,7 +142,6 @@ startBtn.addEventListener('click', function () {
 
     attackBtn.classList.remove('hidden');
 });
-
 
 
 attackBtn.addEventListener('click', playerAttack);
@@ -172,57 +175,37 @@ function playerAttack(){
     messages.innerHTML =
     `<p class="attackMessage">Player ${attacker + 1} attacks for ${damage} damage!</p>`;
 
-
     let attackerImg = attacker === 0 ? player1 : player2;
     let defenderImg = defender === 0 ? player1 : player2;
 
-   
-   
     /* Fireball */
+    fireball.classList.remove('hidden');
 
-fireball.classList.remove('hidden');
+    if(attacker === 0){
+        fireball.classList.add('fireball-right');
+    } else {
+        fireball.classList.add('fireball-left');
+    }
 
-if(attacker === 0){
-    fireball.classList.add('fireball-right');
-}
-else{
-    fireball.classList.add('fireball-left');
-}
-
-/* attack animation */
-
-attackerImg.classList.add(`attack${attackValue}`);
-
-// setTimeout(function(){
-//     defenderImg.classList.add(`defend${defenseValue}`);
-// },800);
-
-
-
+    /* Attack animation */
     attackerImg.classList.add(`attack${attackValue}`);
 
     setTimeout(function(){
         defenderImg.classList.add(`defend${defenseValue}`);
-    },600);
-
+    }, 600);
 
     updateHealth(defender);
     checkWinner(defender);
 
+    setTimeout(function(){
+        fireball.className = "hidden";
+        fireball.classList.remove('fireball-left', 'fireball-right');
+    }, 800);
 
     setTimeout(function(){
-    fireball.className = "hidden";
-    fireball.classList.remove('fireball-left','fireball-right');
-},800);
-
-
-
-    setTimeout(function(){
-
-    player1.className = "";
-    player2.className = "";
-
-},2000);
+        player1.className = "";
+        player2.className = "";
+    }, 2000);
 }
 
 
@@ -235,7 +218,6 @@ function updateHealth(player){
     let health = gameData.health[player];
 
     document.querySelector(`#healthbar${player} div`).style.width = `${health}%`;
-
     document.querySelector(`#monsterhealth${player}`).innerHTML = `${health}%`;
 }
 
@@ -252,15 +234,15 @@ function checkWinner(player){
 
         if(health < 1){
 
-            messages.innerHTML =
-            `<p class="attackMessage">Player ${player === 0 ? 2 : 1} wins the battle!</p>`;
+            let winner = player === 0 ? 2 : 1;
+            let color = winner === 1 ? 'rgb(0, 145, 255)' : 'rgb(192, 35, 17)';
+
+            winnerTitle.innerHTML = `🏆 <span style="color:${color}">Player ${winner} </span>Wins!`;
+            winnerModal.classList.remove('hidden');
 
             attackBtn.classList.add('hidden');
-            playAgainBtn.classList.remove('hidden');
-            
-            return;
-        }
-        else {
+
+        } else {
 
             gameData.index = gameData.index ? 0 : 1;
 
@@ -272,7 +254,7 @@ function checkWinner(player){
             }, 500);
         }
 
-    },2000);
+    }, 2000);
 }
 
 
@@ -280,7 +262,8 @@ function checkWinner(player){
    Play again button
 ----------------------------- */
 
-playAgainBtn.addEventListener('click', function(){
+
+winnerPlayAgain.addEventListener('click', function(){
     location.reload();
 });
 
